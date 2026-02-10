@@ -21,5 +21,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('attendances', AttendanceController::class);
     Route::resource('permissions', PermissionController::class);
     Route::resource('qr_absens', QrAbsenController::class);
+    Route::resource('verifikasi', AttendanceController::class);
+
     Route::get('/qr-absens/{id}/download', [QrAbsenController::class, 'downloadPDF'])->name('qr_absens.download');
 });

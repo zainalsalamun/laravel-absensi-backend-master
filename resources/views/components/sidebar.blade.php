@@ -1,7 +1,7 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="index.html">BAHRI HR</a>
+            <a href="index.html">ATTENDANCE APP</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
             <a href="index.html">St</a>
@@ -42,6 +42,13 @@
                 <a href="{{ route('qr_absens.index') }}" class="nav-link">
                     <i class="fas fa-columns"></i>
                     <span>QR Absen</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="{{ route('attendances.index') }}" class="nav-link">
+                    <i class="fas fa-columns"></i>
+                    <span>Verifikasi Pensiun</span>
                 </a>
             </li>
 
