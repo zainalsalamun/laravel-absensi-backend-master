@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
+use App\Models\Shift;
+
 class UserController extends Controller
 {
     //index
@@ -21,7 +23,8 @@ class UserController extends Controller
     //create
     public function create()
     {
-        return view('pages.users.create');
+        $shifts = Shift::orderBy('name')->get();
+        return view('pages.users.create', compact('shifts'));
     }
 
     //store
@@ -41,6 +44,7 @@ class UserController extends Controller
             'password' => Hash::make($request->password),
             'position' => $request->position,
             'department' => $request->department,
+            'shift_id' => $request->shift_id,
         ]);
 
         return redirect()->route('users.index')->with('success', 'User created successfully');
@@ -49,7 +53,8 @@ class UserController extends Controller
     //edit
     public function edit(User $user)
     {
-        return view('pages.users.edit', compact('user'));
+        $shifts = Shift::orderBy('name')->get();
+        return view('pages.users.edit', compact('user', 'shifts'));
     }
 
     //update
@@ -67,6 +72,7 @@ class UserController extends Controller
             'role' => $request->role,
             'position' => $request->position,
             'department' => $request->department,
+            'shift_id' => $request->shift_id,
         ]);
 
         //if password filled
