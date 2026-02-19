@@ -62,7 +62,7 @@
                                             <th>Email</th>
                                             <th>Phone</th>
                                             <th>Position</th>
-                                            <th>Created At</th>
+                                            <th>Shift</th>
                                             <th>Action</th>
                                         </tr>
                                         @foreach ($users as $user)
@@ -79,7 +79,14 @@
                                                 <td>
                                                     {{ $user->position }}
                                                 </td>
-                                                <td>{{ $user->created_at }}</td>
+                                                <td>
+                                                    @if ($user->shift)
+                                                        {{ $user->shift->name }} <br>
+                                                        <small>{{ $user->shift->time_in }} - {{ $user->shift->time_out }}</small>
+                                                    @else
+                                                        No Shift
+                                                    @endif
+                                                </td>
                                                 <td>
                                                     <div class="d-flex justify-content-center">
                                                         <a href='{{ route('users.edit', $user->id) }}'
