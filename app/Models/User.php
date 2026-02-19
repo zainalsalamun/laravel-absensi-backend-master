@@ -27,8 +27,14 @@ class User extends Authenticatable
         'department',
         'face_embedding',
         'image_url',
-        'fcm_token'
+        'fcm_token',
+        'shift_id',
     ];
+
+    public function shift()
+    {
+        return $this->belongsTo(Shift::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.
