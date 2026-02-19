@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/user', function (Request $request) {
-    return $request->user();
+    return $request->user()->load('shift');
 })->middleware('auth:sanctum');
 
 //login
@@ -46,3 +46,9 @@ Route::get('/api-user/{id}', [App\Http\Controllers\Api\UserController::class, 'g
 Route::post('/api-user/edit', [App\Http\Controllers\Api\UserController::class, 'updateProfile'])->middleware('auth:sanctum');
 
 Route::post('/check-qr', [App\Http\Controllers\Api\QrAbsenController::class, 'checkQR'])->middleware('auth:sanctum');
+
+//reimbursements
+Route::apiResource('/api-reimbursements', App\Http\Controllers\Api\ReimbursementController::class)->middleware('auth:sanctum');
+
+//shifts
+Route::apiResource('/api-shifts', App\Http\Controllers\Api\ShiftController::class)->middleware('auth:sanctum');
