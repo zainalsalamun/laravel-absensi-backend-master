@@ -1,16 +1,15 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="index.html">ATTENDANCE APP</a>
+            <a href="{{ route('home') }}">ATTENDANCE APP</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">St</a>
+            <a href="{{ route('home') }}">St</a>
         </div>
         <ul class="sidebar-menu">
 
-            <li class="nav-item  ">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
-
+            <li class="nav-item">
+                <a href="{{ route('home') }}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
             </li>
 
             <li class="nav-item ">
@@ -35,6 +34,20 @@
                 <a href="{{ route('permissions.index') }}" class="nav-link">
                     <i class="fas fa-columns"></i>
                     <span>Permission</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="{{ route('reimbursements.index') }}" class="nav-link">
+                    <i class="fas fa-columns"></i>
+                    <span>Reimbursement</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="{{ route('shifts.index') }}" class="nav-link">
+                    <i class="fas fa-columns"></i>
+                    <span>Shift</span>
                 </a>
             </li>
 
