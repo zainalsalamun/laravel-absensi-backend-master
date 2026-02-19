@@ -100,6 +100,7 @@
                                     </div>
                                 @enderror
                             </div>
+                            </div>
                             <div class="form-group">
                                 <label>Department</label>
                                 <input type="text"
@@ -112,6 +113,17 @@
                                         {{ $message }}
                                     </div>
                                 @enderror
+                            </div>
+                            <div class="form-group">
+                                <label>Shift</label>
+                                <select class="form-control selectric" name="shift_id">
+                                    <option value="">Select Shift</option>
+                                    @foreach ($shifts as $shift)
+                                        <option value="{{ $shift->id }}" {{ $user->shift_id == $shift->id ? 'selected' : '' }}>
+                                            {{ $shift->name }} ({{ $shift->time_in }} - {{ $shift->time_out }})
+                                        </option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Roles</label>
