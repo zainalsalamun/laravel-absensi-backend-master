@@ -64,7 +64,7 @@
                                             <th>Time Out</th>
                                             <th>Latlong In</th>
                                             <th>Latlong Out</th>
-
+                                            <th>Shift</th>
                                             <th>Action</th>
                                         </tr>
                                         @foreach ($attendances as $attendance)
@@ -86,6 +86,19 @@
                                                 </td>
                                                 <td>
                                                     {{ $attendance->latlon_out }}
+                                                </td>
+                                                <td>
+                                                    @if ($attendance->user->shift)
+                                                        {{ $attendance->user->shift->name }} ({{ $attendance->user->shift->time_in }} - {{ $attendance->user->shift->time_out }})
+                                                        <br>
+                                                        @if ($attendance->time_in > $attendance->user->shift->time_in)
+                                                            <span class="badge badge-danger">Late</span>
+                                                        @else
+                                                            <span class="badge badge-success">On Time</span>
+                                                        @endif
+                                                    @else
+                                                        No Shift
+                                                    @endif
                                                 </td>
 
                                                 <td>
