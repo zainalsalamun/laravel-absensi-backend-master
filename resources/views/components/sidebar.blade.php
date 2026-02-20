@@ -13,54 +13,54 @@
             </li>
 
             <li class="nav-item ">
-                <a href="{{ route('users.index') }}" class="nav-link "><i class="fas fa-columns"></i>
+                <a href="{{ route('users.index') }}" class="nav-link "><i class="fas fa-users"></i>
                     <span>Users</span></a>
             </li>
 
             <li class="nav-item">
                 <a href="{{ route('companies.show', 1) }}" class="nav-link">
-                    <i class="fas fa-columns"></i>
+                    <i class="fas fa-building"></i>
                     <span>Company</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="{{ route('attendances.index') }}" class="nav-link">
-                    <i class="fas fa-columns"></i>
+                    <i class="fas fa-calendar-check"></i>
                     <span>Attendances</span>
                 </a>
             </li>
 
             <li class="nav-item">
                 <a href="{{ route('permissions.index') }}" class="nav-link">
-                    <i class="fas fa-columns"></i>
+                    <i class="fas fa-file-alt"></i>
                     <span>Permission</span>
                 </a>
             </li>
 
             <li class="nav-item">
                 <a href="{{ route('reimbursements.index') }}" class="nav-link">
-                    <i class="fas fa-columns"></i>
+                    <i class="fas fa-money-bill-wave"></i>
                     <span>Reimbursement</span>
                 </a>
             </li>
 
             <li class="nav-item">
                 <a href="{{ route('shifts.index') }}" class="nav-link">
-                    <i class="fas fa-columns"></i>
+                    <i class="fas fa-clock"></i>
                     <span>Shift</span>
                 </a>
             </li>
 
             <li class="nav-item">
                 <a href="{{ route('qr_absens.index') }}" class="nav-link">
-                    <i class="fas fa-columns"></i>
+                    <i class="fas fa-qrcode"></i>
                     <span>QR Absen</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a href="{{ route('attendances.index') }}" class="nav-link">
-                    <i class="fas fa-columns"></i>
+                <a href="{{ route('verifikasi.index') }}" class="nav-link">
+                    <i class="fas fa-user-check"></i>
                     <span>Verifikasi Pensiun</span>
                 </a>
             </li>
