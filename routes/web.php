@@ -12,6 +12,7 @@ use App\Models\Attendance;
 use App\Models\Permission;
 use App\Models\QrAbsen;
 use App\Models\Note;
+use App\Http\Controllers\VerifikasiPensiunController;
 
 Route::get('/', function () {
     return view('pages.auth.auth-login');
@@ -49,10 +50,12 @@ Route::get('home', function () {
 
     Route::resource('users', UserController::class);
     Route::resource('companies', CompanyController::class);
+    Route::get('/attendances/export-csv', [AttendanceController::class, 'exportCsv'])->name('attendances.export-csv');
     Route::resource('attendances', AttendanceController::class);
     Route::resource('permissions', PermissionController::class);
     Route::resource('qr_absens', QrAbsenController::class);
-    Route::resource('verifikasi', AttendanceController::class);
+    Route::get('/verifikasi/export-csv', [VerifikasiPensiunController::class, 'exportCsv'])->name('verifikasi.export-csv');
+    Route::resource('verifikasi', VerifikasiPensiunController::class);
     Route::resource('reimbursements', App\Http\Controllers\ReimbursementController::class);
     Route::resource('shifts', App\Http\Controllers\ShiftController::class);
 
