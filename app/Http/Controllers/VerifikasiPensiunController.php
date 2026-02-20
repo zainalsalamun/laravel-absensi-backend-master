@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Attendance;
 use Illuminate\Http\Request;
 
-class AttendanceController extends Controller
+class VerifikasiPensiunController extends Controller
 {
     //index
     public function index(Request $request)
@@ -16,7 +16,7 @@ class AttendanceController extends Controller
                     $query->where('name', 'like', '%' . $name . '%');
                 });
             })->orderBy('id', 'desc')->paginate(10);
-        return view('pages.absensi.index', compact('attendances'));
+        return view('pages.verifikasi.index', compact('attendances'));
     }
 
     //export csv
@@ -29,7 +29,7 @@ class AttendanceController extends Controller
                 });
             })->orderBy('id', 'desc')->get();
 
-        $filename = 'attendances.csv';
+        $filename = 'verifikasi_pensiun.csv';
 
         $callback = function () use ($attendances) {
             $handle = fopen('php://output', 'w');
