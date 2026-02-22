@@ -100,7 +100,6 @@
                                     </div>
                                 @enderror
                             </div>
-                            </div>
                             <div class="form-group">
                                 <label>Department</label>
                                 <input type="text"
