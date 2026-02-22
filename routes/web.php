@@ -48,6 +48,10 @@ Route::get('home', function () {
     ]);
 })->name('home');
 
+    Route::get('features-profile.html', function () {
+        return view('pages.profile', ['type_menu' => '']);
+    })->name('profile');
+
     Route::resource('users', UserController::class);
     Route::resource('companies', CompanyController::class);
     Route::get('/attendances/export-csv', [AttendanceController::class, 'exportCsv'])->name('attendances.export-csv');
