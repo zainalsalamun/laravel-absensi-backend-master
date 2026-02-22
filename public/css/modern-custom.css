@@ -23,7 +23,12 @@ body {
 }
 
 /* Typography Overrides */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: 600;
     color: #34395e;
 }
@@ -62,7 +67,9 @@ a:hover {
     box-shadow: 0 5px 15px rgba(67, 97, 238, 0.4);
 }
 
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
     background-color: var(--secondary-color) !important;
     border-color: var(--secondary-color) !important;
     transform: translateY(-2px);
@@ -104,6 +111,71 @@ a:hover {
     color: var(--primary-color);
     font-size: 18px;
     font-weight: 700;
+}
+
+/* Profile Widget modern override */
+.profile-widget {
+    margin-top: 35px;
+    overflow: visible;
+}
+
+.profile-widget .profile-widget-picture {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
+    float: left;
+    width: 100px;
+    margin: -35px -5px 0 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.profile-widget .profile-widget-header {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.profile-widget .profile-widget-items {
+    display: flex;
+    position: relative;
+    flex: 1;
+    /* allow full width minus picture space */
+    padding-left: 20px;
+}
+
+.profile-widget .profile-widget-items .profile-widget-item {
+    flex: 1;
+    /* restore flex */
+    text-align: center;
+    border-right: 1px solid #f2f2f6;
+    padding: 10px 0;
+}
+
+.profile-widget .profile-widget-items .profile-widget-item:last-child {
+    border-right: none;
+}
+
+.profile-widget .profile-widget-items .profile-widget-item .profile-widget-item-label {
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    color: #34395e;
+}
+
+.profile-widget .profile-widget-items .profile-widget-item .profile-widget-item-value {
+    color: #000;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.profile-widget .profile-widget-description {
+    padding: 20px;
+    line-height: 26px;
+    clear: both;
+}
+
+.profile-widget .profile-widget-description .profile-widget-name {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: 600;
 }
 
 /* Sidebar Modernization */
